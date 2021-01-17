@@ -17,8 +17,7 @@ export class AppComponent {
   createForm() {
     this.personalForm = this.formBuilder.group({
       lastName: ['', Validators.required],
-      firstName: ['', Validators.required],
-      dob: ['', Validators.required]
+      firstName: ['', Validators.required]
        });
   }
   displayFieldStyle(formGroup: FormGroup, field: string) {
