@@ -22,13 +22,32 @@
 
 
                 </div>
+                <div class="col-sm-3" [ngClass]="displayFieldStyle(personalForm, 'phoneNumber')">
+                    <label class="form-control-label">Phone Number<span class="required"></span></label>
+                    <div class="form-group">
+                        <input type="text" class="form-control" formControlName="phoneNumber" minlength="10" maxlength="14" number-directive [formatType]="'phone'" [formattedPhone]="personalForm.get('phoneNumber')" [ngClass]="displayFieldStyle(personalForm, 'phoneNumber')">
+                    </div>
+                    <app-form-control-error [control]="personalForm.get('phoneNumber')"></app-form-control-error>
+
+
+                </div>
+                <div class="col-sm-3" [ngClass]="displayFieldStyle(personalForm, 'zipCode')">
+                    <label class="form-control-label">ZipCode<span class="required"></span></label>
+                    <div class="form-group">
+                        <input type="text" class="form-control" formControlName="zipCode" minlength="5" maxlength="10" number-directive [formatType]="'zipCode'" [formattedZipCode]="personalForm.get('zipCode')" [ngClass]="displayFieldStyle(personalForm, 'phoneNumber')">
+                    </div>
+                    <app-form-control-error [control]="personalForm.get('phoneNumber')"></app-form-control-error>
+
+
+                </div>
             </div>
         </form>
-        <div class="row justify-content-center">
-            <button type="button" class="btn btn-primary btn-rounded btn-sm ml-2">
-Submit
-          </button>
 
-        </div>
     </div>
+</div>
+<div class="row justify-content-center">
+    <button type="button" class="btn btn-primary btn-rounded btn-sm ml-2">
+     Submit
+  </button>
+
 </div>
